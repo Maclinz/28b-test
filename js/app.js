@@ -57,11 +57,20 @@ const displayData = () => {
             progress.style.width = widths[i] + '%';
             progress.style.backgroundColor = backgroundColors[i];
             progressCon.appendChild(progress);
+            //adding a new div inside the progress div in the 3rd index
+            if(index === 2) {
+                //progress text
+                const progressText = document.createElement('div');
+                progressText.classList.add('progress-text');
+                progressText.innerHTML = widths[i] + '%';
+                progress.appendChild(progressText);
+            }
         }
+
+        
 
         //apend data-item to data-con
         dataCon.appendChild(dataItem);
-
     });
 
     //style the boxes bg colors

@@ -27,6 +27,7 @@
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
+  background-color: var(--colorBg);
 }
 
 a {
@@ -136,9 +137,11 @@ a {
   background-color: var(--colorGreyLight);
   border-radius: var(--borderRadSm);
   margin-bottom: 1.5rem;
+  position: relative;
 }
 .main-content .data-con .data-item .progress-con .progress {
   height: 100%;
+  position: relative;
 }
 .main-content .data-con .data-item .progress-con .progress:first-child {
   border-top-left-radius: var(--borderRadSm);
@@ -183,4 +186,27 @@ a {
 }
 .circle-info .circle-text .circle-number span:last-child {
   font-size: 1.5rem;
+}
+
+.progress-text {
+  position: absolute;
+  bottom: -40px;
+  background-color: var(--colorWhite);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--borderRadSm);
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.2);
+}
+.progress-text:before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid var(--colorWhite);
 }/*# sourceMappingURL=main.css.map */
