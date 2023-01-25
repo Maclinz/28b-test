@@ -20,10 +20,19 @@
   --colorPurple: #8f71dd;
   --borderRadSm: 7px;
   --hoverOpacity: 0.078;
+  --mainPad: 3rem 2rem;
+  --navFlexGap: 4rem;
 }
 
 body {
   font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
 }
 
 .navigation {
@@ -32,28 +41,101 @@ body {
   position: fixed;
   background-color: var(--colorGreyDark);
   z-index: 5;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 0;
+  gap: var(--navFlexGap);
+}
+.navigation .profile-con h3 {
+  padding: 0 2rem;
+}
+.navigation .nav-category {
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+}
+.navigation .nav-items {
+  display: flex;
+  flex-direction: column;
+}
+.navigation .nav-items .nav-item {
+  position: relative;
+}
+.navigation .nav-items .nav-item a {
+  background-color: green;
+  display: block;
+  padding: 1rem 2rem;
+  color: var(--colorWhite);
 }
 
 .main-content {
   margin-left: var(--toobarWidth);
 }
 .main-content .inner-main-content {
-  padding: 3rem 2rem;
+  padding: var(--mainPad);
+}
+.main-content .inner-main-content .main-title {
+  margin-bottom: 2rem;
+}
+.main-content .inner-main-content .stats-container .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.main-content .inner-main-content .stats-container .stats-grid .left-content .info-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.main-content .inner-main-content .stats-container .stats-grid .left-content .info-item p:first-child {
+  font-weight: 500;
+}
+.main-content .inner-main-content .stats-container .stats-grid .right-content {
+  display: flex;
+  flex-direction: column;
+}
+.main-content .inner-main-content .stats-container .stats-grid .right-content .circle-info {
+  align-self: center;
+  margin-left: 10rem;
 }
 .main-content .data-con {
   width: 100%;
-  height: 40px;
+  margin-top: 4rem;
+}
+.main-content .data-con .title-con {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.main-content .data-con .topic-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+.main-content .data-con .topic-details .detail {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.main-content .data-con .topic-details .detail .box {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  transform: rotate(45deg);
 }
 .main-content .data-con .data-item {
-  background-color: var(--colorGreyLight);
-  width: 100%;
-  height: 100%;
-  border-radius: var(--borderRadSm);
-}
-.main-content .data-con .data-item .progress-con {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
+}
+.main-content .data-con .data-item .progress-con {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  background-color: var(--colorGreyLight);
+  border-radius: var(--borderRadSm);
+  margin-bottom: 1.5rem;
 }
 .main-content .data-con .data-item .progress-con .progress {
   height: 100%;
@@ -61,4 +143,44 @@ body {
 .main-content .data-con .data-item .progress-con .progress:first-child {
   border-top-left-radius: var(--borderRadSm);
   border-bottom-left-radius: var(--borderRadSm);
+}
+
+.active {
+  background-color: var(--colorWhite);
+  opacity: var(--hoverOpacity);
+}
+
+.grid-item-name {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.circle-info {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: red;
+  position: relative;
+}
+.circle-info .circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--colorWhite);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.circle-info .circle-text .circle-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 300;
+}
+.circle-info .circle-text .circle-number span:first-child {
+  font-size: 4rem;
+}
+.circle-info .circle-text .circle-number span:last-child {
+  font-size: 1.5rem;
 }/*# sourceMappingURL=main.css.map */
