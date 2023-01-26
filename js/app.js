@@ -1,9 +1,10 @@
-
+//selectors
 const dataCon = document.querySelector(".data-con");
 const boxes = document.querySelectorAll(".box");
+const bMenu = document.querySelector(".burger-menu");
 
 //main colors
-const colors = ['#1a8ddd', '#35ddb3', '#dddc61', '#dd6844', '#8f71dd'];
+const colors = ['#1a8ddd', '#35ddb3', '#dddc61', '#dd6844', '#8f71dd', '#dddddd'];
 
 //propress bar data
 const data = [
@@ -29,6 +30,13 @@ const data = [
     }
 ]   
 
+//toggle menu
+//toggle burger menu
+bMenu.addEventListener('click', () => {
+    document.querySelector('.navigation').classList.toggle('nav-active');
+});
+
+//function that craetes hmtl elements and appends them to the dom
 const displayData = () => {
     data.forEach((item, index) => {
         //descructure data
@@ -66,8 +74,6 @@ const displayData = () => {
                 progress.appendChild(progressText);
             }
         }
-
-        
 
         //apend data-item to data-con
         dataCon.appendChild(dataItem);
