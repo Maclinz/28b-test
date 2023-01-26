@@ -6,7 +6,7 @@ const bMenu = document.querySelector(".burger-menu");
 //main colors
 const colors = ['#1a8ddd', '#35ddb3', '#dddc61', '#dd6844', '#8f71dd', '#dddddd'];
 
-//propress bar data
+//propress bar data and generate random withds
 const data = [
     {
         title: 'Avg',
@@ -30,7 +30,6 @@ const data = [
     }
 ]   
 
-//toggle menu
 //toggle burger menu
 bMenu.addEventListener('click', () => {
     document.querySelector('.navigation').classList.toggle('nav-active');
