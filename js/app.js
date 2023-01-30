@@ -61,7 +61,15 @@ const displayData = () => {
         for (let i = 0; i < 5; i++) {
             const progress = document.createElement('div');
             progress.classList.add('progress');
-            progress.style.width = widths[i] + '%';
+
+            //set progress width to 0
+            progress.style.width = 0;
+
+            //change the width and animate after 200ms
+            setTimeout(() => {
+                progress.style.width = widths[i] + '%';
+            }, 200)
+
             progress.style.backgroundColor = backgroundColors[i];
             progressCon.appendChild(progress);
             //adding a new div inside the progress div in the 3rd index
